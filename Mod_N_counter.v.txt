@@ -1,0 +1,11 @@
+module Mod_N_counter(clk,rst,counter);
+parameter width=3;
+input clk;
+input rst;
+output reg [width-1:0] counter;
+parameter n=4;
+always @(posedge clk or negedge rst) begin
+counter<=(!rst) ? 0:(counter ==n-1)?0:counter+1;
+end
+endmodule
+
